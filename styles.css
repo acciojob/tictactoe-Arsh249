@@ -1,1 +1,26 @@
-/*  your css code here. If applicable */
+.container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .board {
+            display: none;
+            margin: 20px auto;
+        }
+        .row {
+            display: flex;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            cursor: pointer;
+            background-color: pink;
+        }
+        .message {
+            margin: 20px;
+            font-size: 1.2em;
+        }
