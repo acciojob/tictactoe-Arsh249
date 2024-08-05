@@ -8,7 +8,7 @@ const submitButton = document.getElementById('submit');
         let playerA = '';
         let playerB = '';
         let currentPlayer = '';
-        let currentSymbol = 'X';
+        let currentSymbol = 'x';
         let gameActive = true;
 
         submitButton.addEventListener('click', () => {
@@ -28,14 +28,14 @@ const submitButton = document.getElementById('submit');
                 if (gameActive && cell.textContent === '') {
                     cell.textContent = currentSymbol;
                     if (checkWin()) {
-                        messageDiv.textContent = `${currentPlayer}, congratulations you won!`;
+                        messageDiv.textContent = `${currentPlayer} congratulations you won!`;
                         gameActive = false;
                     } else if (isDraw()) {
                         messageDiv.textContent = `It's a draw!`;
                         gameActive = false;
                     } else {
                         currentPlayer = currentPlayer === playerA ? playerB : playerA;
-                        currentSymbol = currentSymbol === 'X' ? 'O' : 'X';
+                        currentSymbol = currentSymbol === 'x' ? 'o' : 'x';
                         messageDiv.textContent = `${currentPlayer}, you're up`;
                     }
                 }
