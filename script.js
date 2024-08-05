@@ -1,22 +1,22 @@
 const submitButton = document.getElementById('submit');
-        const player1Input = document.getElementById('player-1');
-        const player2Input = document.getElementById('player-2');
+        const player1Input = document.getElementById('player1');
+        const player2Input = document.getElementById('player2');
         const messageDiv = document.querySelector('.message');
         const boardDiv = document.querySelector('.board');
         const cells = document.querySelectorAll('.cell');
 
-        let player1 = '';
-        let player2 = '';
+        let playerA = '';
+        let playerB = '';
         let currentPlayer = '';
         let currentSymbol = 'X';
         let gameActive = true;
 
         submitButton.addEventListener('click', () => {
-            player1 = player1Input.value;
-            player2 = player2Input.value;
+            playerA = player1Input.value;
+            playerB = player2Input.value;
 
-            if (player1 && player2) {
-                currentPlayer = player1;
+            if (playerA && playerB) {
+                currentPlayer = playerA;
                 messageDiv.textContent = `${currentPlayer}, you're up`;
                 boardDiv.style.display = 'block';
                 document.querySelector('.input-names').style.display = 'none';
@@ -34,7 +34,7 @@ const submitButton = document.getElementById('submit');
                         messageDiv.textContent = `It's a draw!`;
                         gameActive = false;
                     } else {
-                        currentPlayer = currentPlayer === player1 ? player2 : player1;
+                        currentPlayer = currentPlayer === playerA ? playerB : playerA;
                         currentSymbol = currentSymbol === 'X' ? 'O' : 'X';
                         messageDiv.textContent = `${currentPlayer}, you're up`;
                     }
